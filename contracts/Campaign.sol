@@ -47,4 +47,12 @@ contract Campaign {
         });
         requests.push(newRequest);
     }
+
+    function approveRequest(uint index) public {
+        require(approvers[msg.sender]);
+        require(!request[index].approvals[msg.sender]);
+
+        requests[index].approvals[msg.sender] = true;
+        requests[index].approvalCount++;
+    }
 }
