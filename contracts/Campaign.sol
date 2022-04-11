@@ -45,7 +45,7 @@ contract Campaign {
             recipient: recipient,
             complete: false,
             approvalCount: 0,
-            approvals[msg.sender]: false
+            approvals: ''
         });
         requests.push(newRequest);
     }
